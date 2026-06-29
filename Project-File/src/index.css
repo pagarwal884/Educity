@@ -19,3 +19,10 @@ a {
   line-height: 1;
   cursor: pointer;
 }
+
+    .container {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    }`
