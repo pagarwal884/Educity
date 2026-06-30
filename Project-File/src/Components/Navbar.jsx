@@ -2,10 +2,10 @@ import logo from "../Assets/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="container w-full h-auto text-white fixed top-0 left-0 flex items-center justify-between z-10">
+    <nav className="fixed top-0 left-0 z-10 flex w-full items-center justify-between px-[10%] py-4 text-white">
       <img src={logo} alt="Logo" className="w-45" />
 
-      <ul className="flex list-none gap-8 justify-center items-center">
+      <ul className="flex items-center justify-center gap-8 list-none">
         <li className="mx-2 my-1.5 cursor-pointer">Home</li>
         <li className="mx-2 my-1.5 cursor-pointer">About Us</li>
         <li className="mx-2 my-1.5 cursor-pointer">Program</li>
@@ -13,7 +13,7 @@ const Navbar = () => {
         <li className="mx-2 my-1.5 cursor-pointer">Testimonials</li>
 
         <li className="mx-2 my-1.5">
-          <button className="bg-white text-[#212121] w-30 h-10 rounded-full text-lg font-medium cursor-pointer border-0 outline-none">
+          <button className="h-10 w-30 cursor-pointer rounded-full border-0 bg-white text-lg font-medium text-[#212121] outline-none">
             Contact Us
           </button>
         </li>

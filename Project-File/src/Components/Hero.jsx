@@ -4,7 +4,7 @@ import Darkarrow from "../Assets/dark-arrow.png";
 const Hero = () => {
   return (
     <section
-      className="relative w-full min-h-screen pb-20 bg-cover bg-center mb-10"
+      className="relative mb-10 min-h-screen w-full bg-cover bg-center pb-20"
       style={{ backgroundImage: `url(${HeroImg})` }}
     >
       {/* Overlay */}
@@ -19,17 +19,13 @@ const Hero = () => {
 
           <p className="text-lg leading-8 text-gray-200 md:text-xl">
             Our mission is to provide high-quality education that empowers
-            individuals to reach their full potential and contribute positively
-            to society.
+            individuals to reach their full potential and contribute
+            positively to society.
           </p>
 
           <button className="flex h-12 w-44 items-center justify-center gap-2 rounded-full bg-white font-semibold text-[#08003A] transition-all duration-300 hover:bg-gray-200">
             Explore More
-            <img
-              src={Darkarrow}
-              alt="Arrow"
-              className="h-4 w-4"
-            />
+            <img src={Darkarrow} alt="Arrow" className="h-4 w-4" />
           </button>
         </div>
       </div>
