@@ -1,14 +1,14 @@
-import Navbar from './Components/Navbar';
-import Hero from './Components/Hero';
-import Program from './Components/Program.jsx';
+import Navbar from "./Components/Navbar";
+import Hero from "./Components/Hero";
+import Program from "./Components/Program";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Hero />
       <Program />
-    </div >
+    </>
   );
 };
 

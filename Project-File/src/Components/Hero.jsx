@@ -3,37 +3,37 @@ import Darkarrow from "../Assets/dark-arrow.png";
 
 const Hero = () => {
   return (
-    <div
-      className="relative w-full min-h-screen bg-cover bg-center"
+    <section
+      className="relative w-full min-h-screen pb-20 bg-cover bg-center mb-10"
       style={{ backgroundImage: `url(${HeroImg})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(8,0,58,0.7)] to-[rgba(8,0,58,0.7)]"></div>
+      <div className="absolute inset-0 bg-[rgba(8,0,58,0.7)]"></div>
 
       {/* Content */}
       <div className="relative z-10 flex min-h-screen items-center justify-center px-6 md:px-12">
-        <div className="max-w-[800px] text-center text-white flex flex-col items-center gap-6">
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+        <div className="flex max-w-[800px] flex-col items-center gap-6 text-center text-white">
+          <h1 className="text-5xl font-bold leading-tight md:text-6xl">
             We Ensure Better Education for a Better World.
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-200 leading-8">
+          <p className="text-lg leading-8 text-gray-200 md:text-xl">
             Our mission is to provide high-quality education that empowers
             individuals to reach their full potential and contribute positively
             to society.
           </p>
 
-          <button className="flex items-center justify-center gap-2 w-44 h-12 bg-white text-[#08003A] rounded-full font-semibold hover:bg-gray-200 transition-all duration-300">
+          <button className="flex h-12 w-44 items-center justify-center gap-2 rounded-full bg-white font-semibold text-[#08003A] transition-all duration-300 hover:bg-gray-200">
             Explore More
             <img
               src={Darkarrow}
               alt="Arrow"
-              className="w-4 h-4"
+              className="h-4 w-4"
             />
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
