@@ -21,9 +21,10 @@ a {
 }
 
 .container {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0 auto;
+  padding-left: 10%; 
+  padding-right: 10%; 
+  padding-top: 1rem; 
+  padding-bottom: 1rem;
 }
 
 .program{
