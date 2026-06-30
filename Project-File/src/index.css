@@ -25,4 +25,11 @@ a {
     padding-right: 10%;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    }`
+    }
+
+    .program-card {
+      padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    }

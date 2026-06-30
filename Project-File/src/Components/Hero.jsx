@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[rgba(8,0,58,0.7)] to-[rgba(8,0,58,0.7)]"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
+      <div className="relative z-10 flex min-h-screen items-center justify-center px-6 md:px-12">
         <div className="max-w-[800px] text-center text-white flex flex-col items-center gap-6">
           <h1 className="text-5xl md:text-6xl font-bold leading-tight">
             We Ensure Better Education for a Better World.
