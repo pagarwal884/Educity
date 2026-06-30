@@ -8,8 +8,8 @@ import program_Icon_3 from "../Assets/program-icon-3.png";
 
 const Program = () => {
   return (
-    <section className="py-20">
-  <div className="container mx-auto">
+    <section className="w-full py-20 mt-10">
+  <div className="program mx-auto">
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {/* Card 1 */}
