@@ -6,6 +6,7 @@ import About from "./Components/About.jsx";
 import Campus from "./Components/Campus.jsx";
 import Testimonials from "./Components/Testimonials.jsx";
 import Contact from "./Components/Contact.jsx";
+import Footer from "./Components/Footer.jsx";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Title subTitle="Contact Us" title="Get in Touch" />
         <Contact />
       </div>
+      <Footer />
     </>
   );
 };
