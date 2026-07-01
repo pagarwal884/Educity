@@ -29,18 +29,19 @@ const programs = [
 
 const Program = () => {
   return (
-    <section className="w-full py-5">
+    <section className="w-full px-[10%] py-4">
       <div className="flex w-full justify-center">
-        <div className="grid w-full grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid w-full grid-cols-1 justify-items-center gap-8
+        mx-4 md:grid-cols-2 lg:grid-cols-3">
           {programs.map((program) => (
             <div
               key={program.label}
-              className="group relative w-full max-w-full cursor-pointer overflow-hidden rounded-xl shadow-lg sm:max-w-[340px] md:max-w-[360px] lg:max-w-full"
+              className="group relative w-full max-w-full cursor-pointer overflow-hidden rounded-xl shadow-lg sm:max-w-85 md:max-w-90 lg:max-w-full"
             >
               <img
                 src={program.image}
                 alt={program.alt}
-                className="h-[420px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="h-105 w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl bg-[rgba(0,15,152,0.6)] opacity-0 transition-all duration-500 group-hover:opacity-100">
