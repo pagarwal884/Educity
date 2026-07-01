@@ -29,7 +29,7 @@ const programs = [
 
 const Program = () => {
   return (
-    <section className="w-full px-[10%] py-4">
+    <section className="w-full px-[10%] py-4" id="program">
       <div className="flex w-full justify-center">
         <div className="grid w-full grid-cols-1 justify-items-center gap-8
         mx-4 md:grid-cols-2 lg:grid-cols-3">

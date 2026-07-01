@@ -57,7 +57,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="w-full px-[10%] py-8">
+    <section className="w-full px-[10%] py-8" id="testimonials">
       <div className="relative mx-auto my-10 px-16">
 
         {/* Previous Button */}

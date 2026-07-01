@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../Assets/logo.png";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -11,9 +12,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -25,16 +24,77 @@ const Navbar = () => {
       <img src={logo} alt="Logo" className="w-[180px]" />
 
       <ul className="flex items-center gap-8">
-        <li className="cursor-pointer">Home</li>
-        <li className="cursor-pointer">About Us</li>
-        <li className="cursor-pointer">Program</li>
-        <li className="cursor-pointer">Campus</li>
-        <li className="cursor-pointer">Testimonials</li>
+        <li>
+          <Link
+            to="hero"
+            smooth={true}
+            offset={0}
+            duration={500}
+            className="cursor-pointer"
+          >
+            Home
+          </Link>
+        </li>
 
         <li>
-          <button className="h-10 w-[120px] cursor-pointer rounded-full bg-white text-lg font-medium text-[#212121]">
-            Contact Us
-          </button>
+          <Link
+            to="about"
+            smooth={true}
+            offset={-80}
+            duration={500}
+            className="cursor-pointer"
+          >
+            About Us
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="program"
+            smooth={true}
+            offset={-80}
+            duration={500}
+            className="cursor-pointer"
+          >
+            Programs
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="campus"
+            smooth={true}
+            offset={-80}
+            duration={500}
+            className="cursor-pointer"
+          >
+            Campus
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="testimonials"
+            smooth={true}
+            offset={-80}
+            duration={500}
+            className="cursor-pointer"
+          >
+            Testimonials
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            to="contact"
+            smooth={true}
+            offset={-80}
+            duration={500}
+          >
+            <button className="h-10 w-[120px] cursor-pointer rounded-full bg-white text-lg font-medium text-[#212121]">
+              Contact Us
+            </button>
+          </Link>
         </li>
       </ul>
     </nav>

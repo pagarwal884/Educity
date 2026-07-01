@@ -45,7 +45,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full px-[10%] py-16">
+    <section className="w-full px-[10%] py-16" id="contact">
       <div className="mx-auto flex flex-col gap-16 lg:flex-row">
 
         {/* Contact Information */}

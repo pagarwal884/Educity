@@ -4,6 +4,7 @@ import Darkarrow from "../Assets/dark-arrow.png";
 const Hero = () => {
   return (
     <section
+      id="hero"
       className="relative mb-10 min-h-screen w-full bg-cover bg-center pb-20"
       style={{ backgroundImage: `url(${HeroImg})` }}
     >

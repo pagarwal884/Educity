@@ -7,7 +7,7 @@ import white_arrow from "../Assets/white-arrow.png";
 
 const Campus = () => {
   return (
-    <section className="w-full px-[10%] py-16">
+    <section className="w-full px-[10%] py-16" id="campus">
       <div className="mx-auto w-full text-center">
         <div className="flex flex-wrap justify-center gap-6">
           <img
