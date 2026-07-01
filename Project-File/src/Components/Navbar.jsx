@@ -1,19 +1,38 @@
+import { useEffect, useState } from "react";
 import logo from "../Assets/logo.png";
 
 const Navbar = () => {
+  const [sticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 z-10 flex w-full items-center justify-between px-[10%] py-4 text-white">
-      <img src={logo} alt="Logo" className="w-45" />
+    <nav
+      className={`fixed top-0 left-0 z-50 flex w-full items-center justify-between px-[10%] py-4 text-white transition-all duration-700 ${
+        sticky ? "bg-[#212EA0] shadow-lg" : "bg-transparent"
+      }`}
+    >
+      <img src={logo} alt="Logo" className="w-[180px]" />
 
-      <ul className="flex items-center justify-center gap-8 list-none">
-        <li className="mx-2 my-1.5 cursor-pointer">Home</li>
-        <li className="mx-2 my-1.5 cursor-pointer">About Us</li>
-        <li className="mx-2 my-1.5 cursor-pointer">Program</li>
-        <li className="mx-2 my-1.5 cursor-pointer">Campus</li>
-        <li className="mx-2 my-1.5 cursor-pointer">Testimonials</li>
+      <ul className="flex items-center gap-8">
+        <li className="cursor-pointer">Home</li>
+        <li className="cursor-pointer">About Us</li>
+        <li className="cursor-pointer">Program</li>
+        <li className="cursor-pointer">Campus</li>
+        <li className="cursor-pointer">Testimonials</li>
 
-        <li className="mx-2 my-1.5">
-          <button className="h-10 w-30 cursor-pointer rounded-full border-0 bg-white text-lg font-medium text-[#212121] outline-none">
+        <li>
+          <button className="h-10 w-[120px] cursor-pointer rounded-full bg-white text-lg font-medium text-[#212121]">
             Contact Us
           </button>
         </li>

@@ -4,7 +4,7 @@ import play_icon from "../Assets/play-icon.png";
 
 function About() {
   return (
-    <section className="px-[10%] py-16">
+    <section className="px-[10%] py-4">
       <div className="mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 w-full">
         
         {/* Left Image */}
