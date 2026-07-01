@@ -29,28 +29,40 @@ const programs = [
 
 const Program = () => {
   return (
-    <section className="w-full px-[10%] py-4" id="program">
-      <div className="flex w-full justify-center">
-        <div className="grid w-full grid-cols-1 justify-items-center gap-8
-        mx-4 md:grid-cols-2 lg:grid-cols-3">
-          {programs.map((program) => (
-            <div
-              key={program.label}
-              className="group relative w-full max-w-full cursor-pointer overflow-hidden rounded-xl shadow-lg sm:max-w-85 md:max-w-90 lg:max-w-full"
-            >
+    <section
+      className="w-full px-5 sm:px-8 md:px-12 lg:px-[10%] py-10 md:py-16"
+      id="program"
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+        {programs.map((program) => (
+          <div
+            key={program.label}
+            className="group relative w-full overflow-hidden rounded-xl shadow-lg cursor-pointer"
+          >
+            <img
+              src={program.image}
+              alt={program.alt}
+              className="w-full h-72 sm:h-80 md:h-96 lg:h-[420px] object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl bg-[rgba(0,15,152,0.6)] opacity-0 transition-all duration-500 group-hover:opacity-100">
+
               <img
-                src={program.image}
-                alt={program.alt}
-                className="h-105 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src={program.icon}
+                alt={`${program.label} Icon`}
+                className="w-12 sm:w-14 md:w-16 mb-4"
               />
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center rounded-xl bg-[rgba(0,15,152,0.6)] opacity-0 transition-all duration-500 group-hover:opacity-100">
-                <img src={program.icon} alt={`${program.label} Icon`} className="mb-4 w-16" />
-                <p className="text-xl font-semibold text-white">{program.label}</p>
-              </div>
+              <p className="text-lg sm:text-xl font-semibold text-white text-center px-4">
+                {program.label}
+              </p>
+
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+
       </div>
     </section>
   );

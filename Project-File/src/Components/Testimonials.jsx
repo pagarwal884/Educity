@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import next_icon from "../Assets/next-icon.png";
 import back_icon from "../Assets/back-icon.png";
 import user_1 from "../Assets/user-1.png";
@@ -43,41 +43,58 @@ const testimonials = [
 
 const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const resizeHandler = () => {
+      setIsMobile(window.innerWidth < 768);
+      setCurrentSlide(0);
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, []);
+
+  const cardsPerSlide = isMobile ? 1 : 2;
+  const maxSlide = Math.ceil(testimonials.length / cardsPerSlide) - 1;
 
   const nextSlide = () => {
-    if (currentSlide < 1) {
-      setCurrentSlide(currentSlide + 1);
+    if (currentSlide < maxSlide) {
+      setCurrentSlide((prev) => prev + 1);
     }
   };
 
   const prevSlide = () => {
     if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
+      setCurrentSlide((prev) => prev - 1);
     }
   };
 
   return (
-    <section className="w-full px-[10%] py-8" id="testimonials">
-      <div className="relative mx-auto my-10 px-16">
+    <section
+      className="w-full px-5 sm:px-8 md:px-12 lg:px-[10%] py-10 md:py-16"
+      id="testimonials"
+    >
+      <div className="relative mx-auto">
 
-        {/* Previous Button */}
+        {/* Previous */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[#212EA0] p-3 shadow-lg"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 rounded-full bg-[#212EA0] p-2 sm:p-3 shadow-lg"
         >
-          <img src={back_icon} alt="Previous" className="w-6" />
+          <img src={back_icon} alt="Previous" className="w-4 sm:w-6" />
         </button>
 
-        {/* Next Button */}
+        {/* Next */}
         <button
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-[#212EA0] p-3 shadow-lg"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 rounded-full bg-[#212EA0] p-2 sm:p-3 shadow-lg"
         >
-          <img src={next_icon} alt="Next" className="w-6" />
+          <img src={next_icon} alt="Next" className="w-4 sm:w-6" />
         </button>
 
-        {/* Slider */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden px-8 sm:px-12 md:px-16">
           <ul
             className="flex transition-transform duration-500 ease-in-out"
             style={{
@@ -85,28 +102,36 @@ const Testimonials = () => {
             }}
           >
             {testimonials.map((item) => (
-              <li key={item.id} className="w-1/2 flex-shrink-0 px-3">
-                <div className="h-full rounded-xl bg-white p-6 shadow-lg">
-                  <div className="mb-4 flex items-center gap-4">
+              <li
+                key={item.id}
+                className={`${
+                  isMobile ? "w-full" : "w-1/2"
+                } flex-shrink-0 px-3`}
+              >
+                <div className="h-full rounded-xl bg-white p-5 sm:p-6 shadow-lg">
+
+                  <div className="mb-5 flex items-center gap-4">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="h-16 w-16 rounded-full border-4 border-[#212EA0]"
+                      className="h-14 w-14 sm:h-16 sm:w-16 rounded-full border-4 border-[#212EA0]"
                     />
 
                     <div>
-                      <h3 className="font-semibold text-[#212EA0]">
+                      <h3 className="text-lg font-semibold text-[#212EA0]">
                         {item.name}
                       </h3>
-                      <span className="text-sm text-gray-500">
+
+                      <p className="text-sm text-gray-500">
                         {item.country}
-                      </span>
+                      </p>
                     </div>
                   </div>
 
-                  <p className="leading-7 text-gray-600">
+                  <p className="text-sm sm:text-base leading-7 text-gray-600">
                     {item.review}
                   </p>
+
                 </div>
               </li>
             ))}

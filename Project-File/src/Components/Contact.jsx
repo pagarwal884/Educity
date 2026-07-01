@@ -45,16 +45,19 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full px-[10%] py-16" id="contact">
-      <div className="mx-auto flex flex-col gap-16 lg:flex-row">
+    <section
+      className="w-full px-5 sm:px-8 md:px-12 lg:px-[10%] py-10 md:py-16"
+      id="contact"
+    >
+      <div className="mx-auto flex flex-col lg:flex-row gap-10 lg:gap-16">
 
         {/* Contact Information */}
-        <div className="lg:w-[45%]">
-          <h3 className="mb-6 text-3xl font-bold text-[#212EA0]">
+        <div className="w-full lg:w-[45%]">
+          <h3 className="mb-5 text-2xl sm:text-3xl md:text-4xl font-bold text-[#212EA0] text-center lg:text-left">
             Get in Touch
           </h3>
 
-          <p className="mb-8 leading-7 text-gray-600">
+          <p className="mb-8 text-sm sm:text-base leading-7 text-gray-600 text-center lg:text-left">
             We are committed to providing timely assistance and answering any
             questions you may have regarding our academic programs, admissions,
             campus facilities, or other services. Please complete the contact
@@ -62,14 +65,14 @@ const Contact = () => {
             as possible.
           </p>
 
-          <ul className="space-y-5">
+          <ul className="space-y-5 text-sm sm:text-base">
             <li className="flex items-center gap-3">
-              <img src={mail_icon} alt="Email" className="w-6" />
+              <img src={mail_icon} alt="Email" className="w-5 sm:w-6" />
               <span>admissions@edusity.edu</span>
             </li>
 
             <li className="flex items-center gap-3">
-              <img src={phone_icon} alt="Phone" className="w-6" />
+              <img src={phone_icon} alt="Phone" className="w-5 sm:w-6" />
               <span>+1 (555) 123-4567</span>
             </li>
 
@@ -77,7 +80,7 @@ const Contact = () => {
               <img
                 src={location_icon}
                 alt="Location"
-                className="mt-1 w-6"
+                className="w-5 sm:w-6 mt-1"
               />
               <span>
                 123 University Avenue
@@ -91,11 +94,11 @@ const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="lg:w-[50%]">
+        <div className="w-full lg:w-[50%]">
           <form onSubmit={onSubmit} className="space-y-5">
 
             <div>
-              <label className="font-medium text-gray-700">
+              <label className="font-medium text-gray-700 text-sm sm:text-base">
                 Full Name
               </label>
               <input
@@ -103,12 +106,12 @@ const Contact = () => {
                 name="name"
                 required
                 placeholder="Enter your full name"
-                className="mt-2 w-full rounded bg-[#EBECFE] p-3 outline-none"
+                className="mt-2 w-full rounded bg-[#EBECFE] p-3 sm:p-4 text-sm sm:text-base outline-none"
               />
             </div>
 
             <div>
-              <label className="font-medium text-gray-700">
+              <label className="font-medium text-gray-700 text-sm sm:text-base">
                 Phone Number
               </label>
               <input
@@ -116,12 +119,12 @@ const Contact = () => {
                 name="phone"
                 required
                 placeholder="Enter your phone number"
-                className="mt-2 w-full rounded bg-[#EBECFE] p-3 outline-none"
+                className="mt-2 w-full rounded bg-[#EBECFE] p-3 sm:p-4 text-sm sm:text-base outline-none"
               />
             </div>
 
             <div>
-              <label className="font-medium text-gray-700">
+              <label className="font-medium text-gray-700 text-sm sm:text-base">
                 Email Address
               </label>
               <input
@@ -129,12 +132,12 @@ const Contact = () => {
                 name="email"
                 required
                 placeholder="Enter your email address"
-                className="mt-2 w-full rounded bg-[#EBECFE] p-3 outline-none"
+                className="mt-2 w-full rounded bg-[#EBECFE] p-3 sm:p-4 text-sm sm:text-base outline-none"
               />
             </div>
 
             <div>
-              <label className="font-medium text-gray-700">
+              <label className="font-medium text-gray-700 text-sm sm:text-base">
                 Message
               </label>
               <textarea
@@ -142,20 +145,24 @@ const Contact = () => {
                 rows="6"
                 required
                 placeholder="Please provide details about your inquiry."
-                className="mt-2 w-full resize-none rounded bg-[#EBECFE] p-3 outline-none"
+                className="mt-2 w-full resize-none rounded bg-[#EBECFE] p-3 sm:p-4 text-sm sm:text-base outline-none"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="inline-flex items-center gap-3 rounded-full bg-[#212EA0] px-8 py-3 text-white transition hover:bg-[#1b2587]"
+              className="inline-flex items-center gap-2 sm:gap-3 rounded-full bg-[#212EA0] px-6 sm:px-8 py-3 text-sm sm:text-base text-white transition-all duration-300 hover:bg-[#1b2587]"
             >
               Submit Inquiry
-              <img src={white_arrow} alt="Arrow" className="w-5" />
+              <img
+                src={white_arrow}
+                alt="Arrow"
+                className="w-4 sm:w-5"
+              />
             </button>
 
             {result && (
-              <p className="mt-3 text-sm font-medium text-[#212EA0]">
+              <p className="mt-3 text-sm sm:text-base font-medium text-[#212EA0]">
                 {result}
               </p>
             )}
